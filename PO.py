@@ -1,4 +1,3 @@
-
 import numpy as np
 from pulp import *
 
@@ -8,7 +7,6 @@ np.random.seed(0)
 cost_matrix = np.random.randint(10, 100, size=(N, M))
 
 prob = LpProblem("Minimizar Custo de Designação", LpMinimize)
-Lp
 
 x = LpVariable.dicts("x", (range(N), range(M)), 0, 1, LpBinary)
 
@@ -27,5 +25,4 @@ for i in range(N):
     for j in range(M):
         if x[i][j].varValue == 1:
             print(f"Funcionário {i} atribuído à tarefa {j}")
-            
 print("Custo Total:", value(prob.objective))
